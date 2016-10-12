@@ -1,0 +1,36 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Form Example{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Entering Search Parameters:</a>
+        </div>    
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container">       
+			<h2>For the Current Basic Implementation the Data used: <a href="http://www.yelp.com/dataset_challenge">Yelp Dataset Challenge</a> & realtime traffic data fetched from <a href="https://developers.google.com/maps/?hl=en">Google-Map API</a>.</h2>
+            <h3> Yelp Dataset: </h3>
+			<h4> 1.6M reviews and 500K tips by 366K users for 61K businesses. </h4>
+			<h4> 481K business attributes, e.g., hours, parking availability, ambience. </h4>
+			<h4> Social network of 366K users for a total of 2.9M social edges. </h4>
+			<h4> Aggregated check-ins over time for each of the 61K businesses. </h4>
+			<h3> US Cities available in the data: </h3>
+			<h4> Pittsburgh, Charlotte, Urbana-Champaign, Phoenix, Las Vegas, Madison. </h4>
+			<h3> Input & Output of the current implementation: </h3>
+			<h4> For the current app implementation the user should enter the current physical address & the radius (in Miles) to search . </h4>
+			<h4> The current app implementation will give a Pandas table output containing: 1) Average historic chekin in the current hour & day of the week; 2) Name of the place; 3) Rating of the place; 4) Travelling Time . </h4>
+			<h4> The first three output columns are generated using the Yelp Dataset & the last one using Google API. </h4> 
+			<form method="POST" action="">
+		    Please enter the distance(in mile) to perform search: for example:<b>15</b> to search within 15 mile radius <input type="text" name="distance">
+			<br>
+            Please enter the current address: for example:<b>153 Mountain Dr Carnegie, PA 15106</b> <input type="text" name="address">
+			<br>
+            <input type="submit" name="submit" value="Submit">
+		  </form>
+		  <h2><font color="red"> NB:There are inconsistencies in the current version. For example, the sequential search is slow for production purpose, it might not work with any arbitrary address currently, as more analysis & debugging is required but the example entry address is tested. Currently working on Improving.</font></h2> 
+    </div>
+{% endblock %}

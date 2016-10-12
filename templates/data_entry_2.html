@@ -1,0 +1,30 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Form Example{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Entering Search Parameters:</a>
+        </div>    
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container">       
+			<h2>For the Current Basic Implementation the Data used: <a href="https://developer.foursquare.com/">Four square API</a> & realtime traffic data fetched from <a href="https://developers.google.com/maps/?hl=en">Google-Map API</a>.</h2>
+            <h3> Four square API: </h3>
+			<h4> Foursquare is a local search and discovery service mobile app which provides search results for its users. By taking into account the places a user goes, the things they have told the app that they like, and the other users whose advice they trust, Foursquare provides recommendations of the places to go around a user's current location. </h4>
+			<h4> Foursquare features a developer API that lets third-party applications make use of Foursquare's location data. In March 2013, the Foursquare API had 40,000 registered developers. The API powers searches third-party apps, including Evernote, Uber, Flickr and Jawbone. Instagram formerly made use of the Foursquare API but, after being purchased by Facebook, was forced to switch to Facebook Places at the behest of its parent company, aggravating many existing users. </h4>
+			
+			<h3> Input & Output of the current implementation: </h3>
+			<h4> For the current app implementation the user should enter the current physical address & the radius (in Miles) to search . </h4>
+			<form method="POST" action="">
+		    Please enter the distance(in mile) to perform search: for example:<b>15</b> to search within 15 mile radius <input type="text" name="distance">
+			<br>
+            Please enter the current address: for example:<b>153 Mountain Dr Carnegie, PA 15106</b> <input type="text" name="address">
+			<br>
+            <input type="submit" name="submit" value="Submit">
+		  </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Form Example{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Demo Resturant Location Application</a>
+        </div>    
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container">        
+            <h1>Data used for analysis : <a href="https://developer.foursquare.com/">Foursquare API</a>.</h1>
+			<h2> In this application a Demo of Finding Resturant Location around your current location will be Demonstrated.Data source used: <a href="https://developer.foursquare.com/">Foursquare API</a> and <a href="https://developers.google.com/maps/?hl=en">Google-Map API</a> .</h1>
+			<br>
+			<h2><a href=/foursqr_analysis>Go to the Data Entry page</a></h2>
+    </div>
+{% endblock %}
